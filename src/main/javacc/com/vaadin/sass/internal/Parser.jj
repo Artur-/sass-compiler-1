@@ -292,8 +292,8 @@ public class Parser implements org.w3c.css.sac.Parser {
 	} else if (source.getByteStream() != null) {
 	    // My DOM level 2 implementation doesn't use this case.
 	    if (source.getEncoding() == null) {
-		// unknown encoding, use ASCII as default.
-		return new InputStreamReader(source.getByteStream(), "ASCII");
+		// unknown encoding, use UTF-8 as default.
+		return new InputStreamReader(source.getByteStream(), "UTF-8");
 	    } else {
 		return new InputStreamReader(source.getByteStream(), 
 					     source.getEncoding());
@@ -341,7 +341,7 @@ public class Parser implements org.w3c.css.sac.Parser {
         // Mark either the original stream or the wrapped stream
         input.mark(100);
 	if(encoding == null){
-	    encoding = "ASCII";
+	    encoding = "UTF-8";
 	
 	    char c = ' ';
 

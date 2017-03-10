@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 .foo .v-button:not(.link) {
 	color: #323232;
 }

@@ -136,7 +136,7 @@ public class ScssStylesheet extends Node {
          * parent, ultimately the root scss file. The root scss node has this
          * "encoding" parameter to be null. Its encoding is determined by the
          * 
-         * @charset declaration, the default one is ASCII.
+         * @charset declaration, the default one is UTF-8.
          */
 
         if (identifier == null) {
@@ -344,8 +344,8 @@ public class ScssStylesheet extends Node {
     private String buildString(BuildStringStrategy strategy) {
         StringBuilder string = new StringBuilder("");
         String delimeter = "\n\n";
-        // add charset declaration, if it is not default "ASCII".
-        if (!"ASCII".equals(getCharset())) {
+        // add charset declaration, if it is not default "UTF-8".
+        if (!"UTF-8".equals(getCharset())) {
             string.append("@charset \"").append(getCharset()).append("\";")
                     .append(delimeter);
         }
